@@ -1,51 +1,32 @@
 name: Deploy Hexo
 
 on:
-  workflow_dispatch: # 允许手动触发
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          submodules: true # 根据需求设置 true/false
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "20" # 使用大版本号即可 (v20.x.x)
+          node-version: "20" # 或最新的稳定版本
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Install Hexo git Deployer
-        run: |
-          npm install hexo-deployer-git --save
-          npm install hexo-cli -g
+      - name: Generate static files
+        run: npm run build
 
-      - name: Clean and Generate Static Files
-        run: |
-          hexo clean
-          hexo generate
-
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-action[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Deploy to Github Pages
+      - name: Deploy to GitHub Pages
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          cd public/
-          git init
-          git add -A
-          git commit -m "Deploy to GitHub Pages"
-          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/alonelovely/alonelovely.github.io.git
-          git push origin HEAD:gh-pages -f
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          npm run deploy
