@@ -12,14 +12,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true # 根据需求设置 true/false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "20.17.0" # 使用大版本号即可 (v20.x.x)
+          node-version: "20" # 使用大版本号即可 (v20.x.x)
 
       - name: Install Dependencies
         run: npm install
