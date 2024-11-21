@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LifePainter | LifePainter</title><meta name="author" content="LifePainter"><meta name="copyright" content="LifePainter"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="接口测试使用Postman工具来进行接口测试，以2023年全国职业院校技能大赛软件测试赛题第一套的接口测试题为例子进行接口测试： 由于没有现成的Api接口平台来用作测试平台，所以要借用Postman工具中的Mock来搭建一个Api临时的接口测试平台 题目一:登录接口脚本编写和执行测试题目要求：https:&#x2F;&#x2F;raw.gitmirror.com&#x2F;alonelovely&#x2F;image&#x2F;master&#x2F;po">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LifePainter">
+<meta property="og:url" content="http://example.com/2024/11/21/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="LifePainter">
+<meta property="og:description" content="接口测试使用Postman工具来进行接口测试，以2023年全国职业院校技能大赛软件测试赛题第一套的接口测试题为例子进行接口测试： 由于没有现成的Api接口平台来用作测试平台，所以要借用Postman工具中的Mock来搭建一个Api临时的接口测试平台 题目一:登录接口脚本编写和执行测试题目要求：https:&#x2F;&#x2F;raw.gitmirror.com&#x2F;alonelovely&#x2F;image&#x2F;master&#x2F;po">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_1.jpg">
+<meta property="article:published_time" content="2024-11-21T10:59:41.070Z">
+<meta property="article:modified_time" content="2024-11-21T10:26:58.023Z">
+<meta property="article:author" content="LifePainter">
+<meta property="article:tag" content="努力，奋斗">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_1.jpg"><link rel="shortcut icon" href="https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_5.jpg"><link rel="canonical" href="http://example.com/2024/11/21/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LifePainter","link":"链接: ","source":"来源: LifePainter","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LifePainter',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-11-21 18:26:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/emoji.css"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.gitmirror.com/alonelovely/image/master/MainPage/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-tags"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-fenlei"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liebiao"></use></svg><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinlecidai">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-youlian"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youlian"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-xinxingcao"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xinxingcao"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LifePainter"><span class="site-name">小屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw icon-guidang"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang"></use></svg><span> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><i class="fa-fw icon-tags"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw icon-fenlei"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei"></use></svg><span> 分类</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liebiao"></use></svg><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinlecidai">                   </use></svg><span> 音乐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying">                   </use></svg><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw icon-liuyanban"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyanban"></use></svg><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw icon-youlian"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youlian"></use></svg><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><i class="fa-fw icon-xinxingcao"></i><svg class="menu_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xinxingcao"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-21T10:59:41.070Z" title="发表于 2024-11-21 18:59:41">2024-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-21T10:26:58.023Z" title="更新于 2024-11-21 18:26:58">2024-11-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">667</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"> </use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h1><p>使用Postman工具来进行接口测试，以2023年全国职业院校技能大赛软件测试赛题第一套的接口测试题为例子进行接口测试：</p>
+<p>由于没有现成的Api接口平台来用作测试平台，所以要借用Postman工具中的Mock来搭建一个Api临时的接口测试平台</p>
+<h2 id="题目一-登录接口脚本编写和执行测试"><a href="#题目一-登录接口脚本编写和执行测试" class="headerlink" title="题目一:登录接口脚本编写和执行测试"></a>题目一:登录接口脚本编写和执行测试</h2><h3 id="题目要求："><a href="#题目要求：" class="headerlink" title="题目要求："></a>题目要求：</h3><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/1.png">https://raw.gitmirror.com/alonelovely/image/master/postman/1.png</a></p>
+<h3 id="测试阶段："><a href="#测试阶段：" class="headerlink" title="测试阶段："></a>测试阶段：</h3><h4 id="1-在Postman中新建Collections集，测试集命名为Data-Driver"><a href="#1-在Postman中新建Collections集，测试集命名为Data-Driver" class="headerlink" title="1.在Postman中新建Collections集，测试集命名为Data_Driver"></a>1.在Postman中新建Collections集，测试集命名为Data_Driver</h4><h4 id="2-在测试集Data-Driver下新建data-driver脚本"><a href="#2-在测试集Data-Driver下新建data-driver脚本" class="headerlink" title="2.在测试集Data_Driver下新建data_driver脚本"></a>2.在测试集Data_Driver下新建data_driver脚本</h4><h4 id="3-因为请求方式为POST，所以记得把默认的GET的请求改为POST请求并记得保存"><a href="#3-因为请求方式为POST，所以记得把默认的GET的请求改为POST请求并记得保存" class="headerlink" title="3.因为请求方式为POST，所以记得把默认的GET的请求改为POST请求并记得保存"></a>3.因为请求方式为POST，所以<strong>记得把默认的GET的请求改为POST请求并记得保存</strong></h4><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/2.png">https://raw.gitmirror.com/alonelovely/image/master/postman/2.png</a></p>
+<h4 id="4-把”http-XX-XX-XX-XX-XXXX-prod-api-auth-login-quot-，填入URL框中-比赛时会给具体的测试地址"><a href="#4-把”http-XX-XX-XX-XX-XXXX-prod-api-auth-login-quot-，填入URL框中-比赛时会给具体的测试地址" class="headerlink" title="4.把”http://XX.XX.XX.XX:XXXX/prod-api/auth/login&quot;，填入URL框中(比赛时会给具体的测试地址)"></a>4.把”<a href="http://XX.XX.XX.XX:XXXX/prod-api/auth/login&quot;，填入URL框中(比赛时会给具体的测试地址">http://XX.XX.XX.XX:XXXX/prod-api/auth/login&quot;，填入URL框中(比赛时会给具体的测试地址</a>)</h4><h4 id="5-可忽略（这一点在比赛中不用搭建，比赛时会提供测试平台，这仅是为了练习而搭建）"><a href="#5-可忽略（这一点在比赛中不用搭建，比赛时会提供测试平台，这仅是为了练习而搭建）" class="headerlink" title="5.可忽略（这一点在比赛中不用搭建，比赛时会提供测试平台，这仅是为了练习而搭建）"></a>5.可忽略（这一点在比赛中不用搭建，比赛时会提供测试平台，这仅是为了练习而搭建）</h4><h4 id="https-raw-gitmirror-com-alonelovely-image-master-postman-3-png"><a href="#https-raw-gitmirror-com-alonelovely-image-master-postman-3-png" class="headerlink" title="https://raw.gitmirror.com/alonelovely/image/master/postman/3.png"></a><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/3.png">https://raw.gitmirror.com/alonelovely/image/master/postman/3.png</a></h4><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/4.png">https://raw.gitmirror.com/alonelovely/image/master/postman/4.png</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/5.png">https://raw.gitmirror.com/alonelovely/image/master/postman/5.png</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/6.png">https://raw.gitmirror.com/alonelovely/image/master/postman/6.png</a></p>
+<h4 id="6-在脚本Body中的raw下新建json参数（username、password、roleId）进行传值，username和password进行参数化"><a href="#6-在脚本Body中的raw下新建json参数（username、password、roleId）进行传值，username和password进行参数化" class="headerlink" title="6.在脚本Body中的raw下新建json参数（username、password、roleId）进行传值，username和password进行参数化"></a>6.在脚本Body中的raw下新建json参数（username、password、roleId）进行传值，username和password进行参数化</h4><h5 id="1-可忽略-创建响应结果"><a href="#1-可忽略-创建响应结果" class="headerlink" title="1.(可忽略)创建响应结果"></a>1.(可忽略)创建响应结果</h5><p>因为没有真实的测试平台没有响应结果，所以运行之后无法判断是否正确所以先创建响应结果</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/7.png">https://raw.gitmirror.com/alonelovely/image/master/postman/7.png</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/8.png">https://raw.gitmirror.com/alonelovely/image/master/postman/8.png</a></p>
+<p>按照上面创建的一个响应结果，把后面两个也创建完成</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/9.png">https://raw.gitmirror.com/alonelovely/image/master/postman/9.png</a></p>
+<p>可能会出现上图的情况，如果出现上图情况</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/10.png">https://raw.gitmirror.com/alonelovely/image/master/postman/10.png</a></p>
+<h5 id="2-对username-password进行参数化"><a href="#2-对username-password进行参数化" class="headerlink" title="2.对username,password进行参数化"></a>2.对username,password进行参数化</h5><p>创建一个JSON文件：</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/11.png">https://raw.gitmirror.com/alonelovely/image/master/postman/11.png</a></p>
+<h5 id="3-进行关联"><a href="#3-进行关联" class="headerlink" title="3.进行关联"></a>3.进行关联</h5><p>需要把参数的值与文件中的数值进行关联：</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/12.png">https://raw.gitmirror.com/alonelovely/image/master/postman/12.png</a></p>
+<h5 id="4-（可忽略）把Headers中的x-mock-response-name也进行关联"><a href="#4-（可忽略）把Headers中的x-mock-response-name也进行关联" class="headerlink" title="4.（可忽略）把Headers中的x-mock-response-name也进行关联:"></a>4.（可忽略）把Headers中的x-mock-response-name也进行关联:</h5><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/13.png">https://raw.gitmirror.com/alonelovely/image/master/postman/13.png</a></p>
+<h4 id="7-执行Run，在测试集合运行页面设置执行要求，运行次数要求3次，请求间隔时间为500ms，发送请求的data文件导入前面的新建json数据文件"><a href="#7-执行Run，在测试集合运行页面设置执行要求，运行次数要求3次，请求间隔时间为500ms，发送请求的data文件导入前面的新建json数据文件" class="headerlink" title="7.执行Run，在测试集合运行页面设置执行要求，运行次数要求3次，请求间隔时间为500ms，发送请求的data文件导入前面的新建json数据文件"></a>7.执行Run，在测试集合运行页面设置执行要求，运行次数要求3次，请求间隔时间为500ms，发送请求的data文件导入前面的新建json数据文件</h4><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/14.png">https://raw.gitmirror.com/alonelovely/image/master/postman/14.png</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/15.png">https://raw.gitmirror.com/alonelovely/image/master/postman/15.png</a></p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/16.png">https://raw.gitmirror.com/alonelovely/image/master/postman/16.png</a></p>
+<h4 id="扩展-测试用例集导入json数据后预览数据的截图："><a href="#扩展-测试用例集导入json数据后预览数据的截图：" class="headerlink" title="(扩展)测试用例集导入json数据后预览数据的截图："></a>(扩展)测试用例集导入json数据后预览数据的截图：</h4><p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/17.png">https://raw.gitmirror.com/alonelovely/image/master/postman/17.png</a></p>
+<p>效果图：</p>
+<p><a target="_blank" rel="noopener" href="https://raw.gitmirror.com/alonelovely/image/master/postman/18.png">https://raw.gitmirror.com/alonelovely/image/master/postman/18.png</a></p>
+<h4 id="题目一结束"><a href="#题目一结束" class="headerlink" title="题目一结束"></a>题目一结束</h4></article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h></h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://example.com/2024/11/21/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">http://example.com/2024/11/21/接口测试/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>LifePainter</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-11-21</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-11-21</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author_top is-center"><div class="card-info-avatar"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.gitmirror.com/alonelovely/image/master/MainPage/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>认真摸鱼中</span></div></div></div><div class="author-info__name">LifePainter</div><div class="author-info__description">学习的地方</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/alonelovely"><i class="fab fa-github"></i><span>前往基地...</span><i class="faa-passing animated" style="padding-left:20px;display:inline-block;vertical-align:middle;"><svg class="icon" style="height:28px;width:28px;fill:currentColor;position:relative;top:5px"><use xlink:href="#icon-xiaoche"></use></svg></i></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="mailto:3314703129@qq.com" target="_blank" title="邮箱"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youjian"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://github.com/alonelovely/" target="_blank" title="Github"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-GitHub"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:25px;fill:currentColor;position:relative;top:5px" aria-hidden="true"><use xlink:href="#icon-gonggao">    </use></svg></a><span>公告栏</span></div><div class="announcement_content"><center><span>一起努力</span></center></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">接口测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80-%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%92%8C%E6%89%A7%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-text">题目一:登录接口脚本编写和执行测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="toc-text">题目要求：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5%EF%BC%9A"><span class="toc-text">测试阶段：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9C%A8Postman%E4%B8%AD%E6%96%B0%E5%BB%BACollections%E9%9B%86%EF%BC%8C%E6%B5%8B%E8%AF%95%E9%9B%86%E5%91%BD%E5%90%8D%E4%B8%BAData-Driver"><span class="toc-text">1.在Postman中新建Collections集，测试集命名为Data_Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86Data-Driver%E4%B8%8B%E6%96%B0%E5%BB%BAdata-driver%E8%84%9A%E6%9C%AC"><span class="toc-text">2.在测试集Data_Driver下新建data_driver脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%9B%A0%E4%B8%BA%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E4%B8%BAPOST%EF%BC%8C%E6%89%80%E4%BB%A5%E8%AE%B0%E5%BE%97%E6%8A%8A%E9%BB%98%E8%AE%A4%E7%9A%84GET%E7%9A%84%E8%AF%B7%E6%B1%82%E6%94%B9%E4%B8%BAPOST%E8%AF%B7%E6%B1%82%E5%B9%B6%E8%AE%B0%E5%BE%97%E4%BF%9D%E5%AD%98"><span class="toc-text">3.因为请求方式为POST，所以记得把默认的GET的请求改为POST请求并记得保存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%8A%8A%E2%80%9Dhttp-XX-XX-XX-XX-XXXX-prod-api-auth-login-quot-%EF%BC%8C%E5%A1%AB%E5%85%A5URL%E6%A1%86%E4%B8%AD-%E6%AF%94%E8%B5%9B%E6%97%B6%E4%BC%9A%E7%BB%99%E5%85%B7%E4%BD%93%E7%9A%84%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80"><span class="toc-text">4.把”http:&#x2F;&#x2F;XX.XX.XX.XX:XXXX&#x2F;prod-api&#x2F;auth&#x2F;login&quot;，填入URL框中(比赛时会给具体的测试地址)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8F%AF%E5%BF%BD%E7%95%A5%EF%BC%88%E8%BF%99%E4%B8%80%E7%82%B9%E5%9C%A8%E6%AF%94%E8%B5%9B%E4%B8%AD%E4%B8%8D%E7%94%A8%E6%90%AD%E5%BB%BA%EF%BC%8C%E6%AF%94%E8%B5%9B%E6%97%B6%E4%BC%9A%E6%8F%90%E4%BE%9B%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%EF%BC%8C%E8%BF%99%E4%BB%85%E6%98%AF%E4%B8%BA%E4%BA%86%E7%BB%83%E4%B9%A0%E8%80%8C%E6%90%AD%E5%BB%BA%EF%BC%89"><span class="toc-text">5.可忽略（这一点在比赛中不用搭建，比赛时会提供测试平台，这仅是为了练习而搭建）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#https-raw-gitmirror-com-alonelovely-image-master-postman-3-png"><span class="toc-text">https:&#x2F;&#x2F;raw.gitmirror.com&#x2F;alonelovely&#x2F;image&#x2F;master&#x2F;postman&#x2F;3.png</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%9C%A8%E8%84%9A%E6%9C%ACBody%E4%B8%AD%E7%9A%84raw%E4%B8%8B%E6%96%B0%E5%BB%BAjson%E5%8F%82%E6%95%B0%EF%BC%88username%E3%80%81password%E3%80%81roleId%EF%BC%89%E8%BF%9B%E8%A1%8C%E4%BC%A0%E5%80%BC%EF%BC%8Cusername%E5%92%8Cpassword%E8%BF%9B%E8%A1%8C%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">6.在脚本Body中的raw下新建json参数（username、password、roleId）进行传值，username和password进行参数化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8F%AF%E5%BF%BD%E7%95%A5-%E5%88%9B%E5%BB%BA%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%9C"><span class="toc-text">1.(可忽略)创建响应结果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AF%B9username-password%E8%BF%9B%E8%A1%8C%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">2.对username,password进行参数化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%BF%9B%E8%A1%8C%E5%85%B3%E8%81%94"><span class="toc-text">3.进行关联</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%EF%BC%88%E5%8F%AF%E5%BF%BD%E7%95%A5%EF%BC%89%E6%8A%8AHeaders%E4%B8%AD%E7%9A%84x-mock-response-name%E4%B9%9F%E8%BF%9B%E8%A1%8C%E5%85%B3%E8%81%94"><span class="toc-text">4.（可忽略）把Headers中的x-mock-response-name也进行关联:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E6%89%A7%E8%A1%8CRun%EF%BC%8C%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86%E5%90%88%E8%BF%90%E8%A1%8C%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE%E6%89%A7%E8%A1%8C%E8%A6%81%E6%B1%82%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%AC%A1%E6%95%B0%E8%A6%81%E6%B1%823%E6%AC%A1%EF%BC%8C%E8%AF%B7%E6%B1%82%E9%97%B4%E9%9A%94%E6%97%B6%E9%97%B4%E4%B8%BA500ms%EF%BC%8C%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E7%9A%84data%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E5%89%8D%E9%9D%A2%E7%9A%84%E6%96%B0%E5%BB%BAjson%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-text">7.执行Run，在测试集合运行页面设置执行要求，运行次数要求3次，请求间隔时间为500ms，发送请求的data文件导入前面的新建json数据文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%9B%86%E5%AF%BC%E5%85%A5json%E6%95%B0%E6%8D%AE%E5%90%8E%E9%A2%84%E8%A7%88%E6%95%B0%E6%8D%AE%E7%9A%84%E6%88%AA%E5%9B%BE%EF%BC%9A"><span class="toc-text">(扩展)测试用例集导入json数据后预览数据的截图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80%E7%BB%93%E6%9D%9F"><span class="toc-text">题目一结束</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/21/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://raw.gitmirror.com/alonelovely/image/master/MainPage/background_1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/11/21/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" title="无题">无题</a><time datetime="2024-11-21T10:59:41.070Z" title="发表于 2024-11-21 18:59:41">2024-11-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By LifePainter</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">        </use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent"> <span>0<span>%</span></span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"> </i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><script defer src="/js/cursor.js"></script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="//at.alicdn.com/t/c/font_4702006_t4j2zxp213.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script defer data-pjax src="js/"emoji.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script src="/js/share.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script defer src="/js/lunar.js"></script><script defer src="/js/day.js"></script><script src="/js/sun_moon.js" async></script><script src="random.js"></script><script async src="/js/title.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/fireworks.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><a class="magnet_link_more"  href="http://example.com/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #69e8f2}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>

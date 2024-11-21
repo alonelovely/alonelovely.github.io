@@ -36,16 +36,3 @@ var leonus = {
         })
     },
 };
-new Vue({
-    data: function () {
-        this.$notify({
-            title: "你已被发现😜",
-            message: "若要转载最好保留原文链接哦！！",
-            position: 'top-left',
-            offset: 50,
-            showClose: true,
-            type: "warning",
-            duration: 5000
-        });
-    }
-})
